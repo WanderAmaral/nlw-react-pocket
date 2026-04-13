@@ -8,6 +8,7 @@ import { createGoalRoute } from './routes/create-goal'
 import { createCompletionRoute } from './routes/create-completion'
 import { getPendingGoalsRoute } from './routes/get-pending-goals'
 import { getWeekSummaryRoute } from './routes/get-week.summary'
+import { deleteGoalRoute } from './routes/delete-goal'
 import fastifyCors from '@fastify/cors'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
@@ -23,6 +24,7 @@ app.register(createGoalRoute)
 app.register(createCompletionRoute)
 app.register(getPendingGoalsRoute)
 app.register(getWeekSummaryRoute)
+app.register(deleteGoalRoute)
 
 app
   .listen({
